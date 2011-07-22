@@ -1,0 +1,50 @@
+/* 
+ * ie6.css - css styles for Win IE < 7
+ *
+ */
+
+/*
+ * html elements
+ */
+		/*
+		 * headings
+		 */
+
+		/*
+		 * forms
+		 */
+
+		/*
+		 * text
+		 */
+		
+		/*
+		 * clearfix
+		 */
+				.clearfix { height : 1%;}
+
+/*
+ * global ids / areas
+ */
+		/*
+		 * options - dropdown widths
+		 */
+				 #options ul li#options-view ul {
+    	             width : 70px;
+    	         }
+
+				#options ul li#options-tabs ul {
+    	             width : 60px;
+    	         }
+
+				#options ul li#options-transitions ul {
+    	             width : 90px;
+    	         }
+
+				#options ul li#options-colourscheme ul {
+    	             width : 110px;
+    	         }
+
+/*
+ * page specific styles
+ */		

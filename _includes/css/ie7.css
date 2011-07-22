@@ -1,0 +1,43 @@
+/* 
+ * ie7.css - css styles for Win IE 7
+ *
+ * all styles that start with { * html } are for IE6 testing purposes only
+ */
+
+/*
+ * html elements
+ */
+		/*
+		 * headings
+		 */
+
+		/*
+		 * forms
+		 */
+				
+		/*
+		 * text
+		 */
+		
+		/*
+		 * clearfix
+		 */
+				/* clearfix - fixes float clearing issues */
+				.clearfix {
+					display : inline-block;
+				}
+
+				/* IE < 7 */
+				* html .clearfix { height : 1%;}
+
+/*
+ * global ids / areas
+ */
+
+
+/*
+ * page specific styles
+ */		
+		/*
+		 * Home page
+		 */
