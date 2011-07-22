@@ -6,12 +6,6 @@
  * A Localhost browser that enables you to quickly look through all the files on your local web server
  * Any suggestions, comments, compliments and complaints happily received.  
  *
- * http://code.google.com/p/boris/
- *
- * $Id: Boris.php 46 2009-03-22 13:19:38Z thegingerbloke $
- * 
- * $Rev: 46 $
- *
  * @author Pete Goodman - pete@petegoodman.com
  */
 
