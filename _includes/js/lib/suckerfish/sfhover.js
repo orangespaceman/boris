@@ -1,0 +1,19 @@
+/**
+ * Suckerfish hover - IE6 fix
+ * http://htmldog.com/articles/suckerfish/dropdowns/
+ */
+sfHover = function(id, tag) {
+	var sfEls = document.getElementById(id).getElementsByTagName(tag);
+	for (var i=0; i<sfEls.length; i++) {
+		sfEls[i].onmouseover=function() {
+			this.className+=" sfhover";
+		}
+		sfEls[i].onmouseout=function() {
+			this.className=this.className.replace(new RegExp(" sfhover\\b"), "");
+		}
+	}
+}
+if (window.attachEvent) window.attachEvent("onload", function(){
+	sfHover('options', 'LI');
+	sfHover('projectlist', 'SPAN')
+});

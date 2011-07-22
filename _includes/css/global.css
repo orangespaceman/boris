@@ -1,0 +1,578 @@
+/** 
+ * CSS for Boris - Localhost browser
+ *
+ * @author Pete Goodman
+ *
+ */
+
+/* 
+ * Global selectors and classes
+ */
+
+		/* reset margins and padding - cross browser compatibility */
+		* { margin : 0px; padding : 0px; }
+
+		/* makes browsers always display vertical scrollbar */
+		html { 
+			height : 100.01%;
+			padding-bottom : 1px; 
+		} 
+		
+		/* body */
+		body {	
+			font : 62.5%/1.35 Geneva, Verdana, Arial, helvetica, sans-serif; /* reset 1em to 10px */
+			padding : 15px;
+			background-color : #fff;
+			color : #000;
+		}
+
+
+		/* 
+		 * headings
+		 */
+				/* common properties */
+				h1, h2, h3 {
+					font-size : 1.1em;
+					font-weight : normal;
+				}
+
+				h1 { 
+					float : left;
+					width : auto;
+					margin : 0;
+					padding : 3px 0 0 60px;
+					font-size : 1.8em;
+				}
+
+				h2 { 
+					font-size : 1.4em;
+					margin : 0;	
+				}
+
+				h3 {
+					font-size : 1.2em;
+					margin : 0;	
+				}
+
+		/* 
+		 * links
+		 */
+				a { 
+					text-decoration: none; 
+					color: #c00; 
+				}
+
+				a:hover { 
+					text-decoration: none; 
+					color: #000; 
+				}
+
+		/* 
+		 * lists
+		 */
+		 		ul, 
+				ol,
+				dl {
+					margin-bottom : 2em;
+					list-style : none;
+				}
+
+				li, 
+				dt, 
+				dd {
+					font-size : 1.1em;
+				}
+				
+				dt {
+					font-weight : bold;
+				}
+
+
+		/*
+		 * global classes
+		 */
+				/* o r a n g e */
+				.orange {
+					color : #f90;
+				}
+
+				/*
+				 * clearfix - fixes float clearing issues
+				 */
+						.clearfix {
+						    display : block;
+						}
+						
+						/* Gecko-based browsers */
+						 .clearfix:after {
+						     content : "."; 
+						     display : block; 
+						     height : 0px; 
+						     clear : both; 
+						     visibility : hidden;
+						}
+
+				/*
+				 * ul --> change | into | horizontal | navigation | links
+				 */
+				        /* float selected element and all other links */
+				        ul.horiznavlist li,
+				 		dl.horiznavlist dt,
+						dl.horiznavlist dd {
+				            display : block;
+				            float : left;
+				            padding : 0px 6px 0px 6px;
+				            border-right : 1px solid #333;
+				            background : none;
+				        }
+				
+				        /* remove left padding from first item in a list */
+				        ul.horiznavlist li.first,
+						dl.horiznavlist dt.first,
+						dl.horiznavlist dd.first {
+				            padding-left : 0px !important;
+				        }
+
+				        /* remove right padding from last item in a list */
+				        ul.horiznavlist li.last,
+						dl.horiznavlist dt,
+						dl.horiznavlist dd.last {
+				            padding-right : 0px !important;
+				            border-right : 0px !important;
+				        }
+	
+
+
+/*
+ * global ids / areas
+ */
+		/*
+		 * header
+		 */
+			 	#header {
+			 	    width : 100%;
+					margin-bottom : 1em;
+					padding-bottom : 0;
+					background : url("../img/site_icon.gif") transparent no-repeat top left;
+				}
+				
+				/* 
+				 *  header : Breadcrumb navigation -- styling the nested lists
+				 */
+						#header ul#crumb {
+							clear : left;
+							padding-left : 60px;
+        					margin-bottom : 0;
+							font-size : 1.3em; 
+						}
+						
+						/* make all crumb lists inline */
+						#header ul#crumb ul { 
+							display : inline;
+							padding : 0;
+							margin : 0;
+							font-size : 1em; /* force all nested elements to be the same font size */
+						}
+
+						#header ul#crumb li {
+							margin : 0;
+							padding : 0;
+							list-style : none;
+							display : inline;
+							font-size : 1em; /* force all nested elements to be the same font size */
+						}
+							
+						#header ul#crumb li a {
+							float : left;
+							display : block;
+							text-decoration : underline;
+							background : url('../img/slash.gif') transparent no-repeat 100% 50%;
+							padding-right : 1em;
+							margin-right : 0.4em;
+						}
+				
+		/*
+		 * Options area 
+		 */
+		        #options {
+		            width : 100%;
+		            padding-bottom : 0.2em;
+                    border-bottom : 2px solid #000;
+		        }
+		        
+		        /*
+		         * Options area : initial menu
+		         */
+        		        #options ul,
+        		        #options li {
+        		            margin : 0 1px 0 0;
+        		            padding : 0;
+        		            font-size : 1em;
+        		        }
+		        
+        		        #options ul li {
+        		            float : right;
+        		            margin-left : 2em;
+        		            position : relative;
+        		            padding : 0 2em 0 1em;
+							z-index : 11;
+        		        }
+		        
+        		        #options ul li a {
+		                    padding-left : 10px;
+		                    background : url('../img/bullet_down.gif') transparent no-repeat 0% 50%;
+        		        }
+        		        
+        		/*
+        		 * Options area : sub menus
+        		 */
+        		        #options ul li ul {
+        		            display : none;
+                            position : absolute;
+                            top : 0;
+                            left : 0;
+							padding-top : 1.3em;
+        	                background : transparent;
+        	                border : 1px solid #ccc;
+        	                border-top : 0;
+        	                z-index : 10;
+        	                width : 100%;
+        	            }
+        	            
+        	            /* overwrite positioning for sub-elements */
+        	            #options ul li ul li {
+    	                    float : none;
+    	                    margin : 0;
+    	                    position : static;
+        	                padding : 0.1em 0.3em;
+							background : #fff;
+    	                }
+                
+                        /* show sub menus on hover */
+                        #options ul li:hover ul,
+                        #options ul li.sfhover ul {
+                            display : block;
+                        }
+                        
+                        #options ul li ul li a {
+                            display : block;
+                            background-image : url('../img/bullet_right.gif');
+                        }
+                        
+                        #options ul li ul li a strong {
+                            background : url('../img/option_selected.gif') transparent no-repeat 100% 50%;
+                            padding-right : 15px;
+                            font-weight : normal;
+                        }
+                        
+                        /*
+                         * Options area : sub menus : option images
+                         */
+                                #options ul li#options-view li a {
+                                    padding-left : 14px;
+                                    background-position : 0 0;
+                                }
+                                
+                                #options ul li#options-view li a:hover {
+                                    background-position : 0 -34px;
+                                }
+                                
+                                #options ul li ul li#options-view-list a {
+                                    background-image : url('../img/options_view_list.gif');
+                                }
+                                
+                                #options ul li ul li#options-view-grid a {
+                                    background-image : url('../img/options_view_grid.gif');
+                                }
+	            
+				
+
+		/*
+		 * content
+		 */
+			 	#content {
+					width : 100%;
+				}
+				
+				#projects {
+					padding-left : 15em;
+					position : relative;
+					overflow : hidden;
+					background : #eee;
+				}
+				
+				/* full-width project list when tabs are hidden (from options menu) */
+				#projects.full {
+			        padding-left : 0;
+			    }
+
+				
+		/*
+		 * projects : tabs (left nav)
+		 */
+				#projects ul#projecttabs {
+					position : relative;
+					float : left;
+					width : 15em;
+					margin-left : -100%;
+					right : 15em;
+					border-bottom : 1px solid #000;
+					background : #fff;
+					overflow : hidden;
+				}
+				
+				/* hidden class, switchable in options menu */
+				#projects.full ul#projecttabs {
+			        display : none;
+			    }
+				
+				#projects ul#projecttabs li {
+				}
+				
+				#projects ul#projecttabs li a {
+					display : block;
+					padding : 0.5em;
+					border-bottom : 1px solid #000;
+					color : #000;
+				}
+				
+				#projects ul#projecttabs li a.selected,
+				#projects ul#projecttabs li a:hover {
+					background : #eee;
+				}
+				
+				#projects ul#projecttabs li a.selected {
+					font-weight : bold;
+				}
+		
+		
+		/*
+		 * projects : individual project layout
+		 */
+				#projects #projectlist {
+					position : relative;
+					float : left;
+					width : 100%;
+					padding-bottom : 1px; /* give the project list some content, so it doesn't disappear off screen when empty */
+				}
+
+				
+				/*
+				 * projects : individual project layout : grid
+				 */
+        				#projects #projectlist p,
+        				#projects #projectlist.grid p {
+        					float : left;
+        					width : 26em; /* optimise for 1024 & 1280 width */
+        					background : #fff;
+        					margin : 0.5em 0.5em 0 0.5em;
+							padding-bottom : 0;
+							font-size : 0.9em;
+        				}
+        				
+        				/* when no tabs are shown, increase the width of the projects */
+        				#projects.full #projectlist p,
+        				#projects.full #projectlist.grid p {
+        			        width : 29.5em; /* optimise for 1024 & 1280 width */
+        			    }
+
+						/* 
+						 * link element surrounds each project 
+						 */ 
+								#projects #projectlist p a,
+								#projects #projectlist p.grid a {
+									display : block;
+									padding : 0.5em;
+									border : 1px solid #fff;
+									background-repeat : no-repeat;
+									background-position : 0.3em 0.9em;
+									color : #666;
+									text-decoration : none;
+								}
+
+								#projects #projectlist p a:hover,
+								#projects #projectlist p.grid a:hover {
+									color : #000;
+									border-color : #ccc;
+									background-color : #fafafa;
+								}
+
+
+						#projects #projectlist p a strong,
+						#projects #projectlist.grid p a strong {
+        					display : block;
+							border-top : 2px solid #ccc;
+							border-bottom : 1px solid #ccc;
+							padding : 0.2em 0 0.2em 2em;
+							margin-bottom : 0.5em;
+							font-size : 1.2em;
+							color : #c00;
+        				}
+
+						#projects #projectlist p a:hover strong {
+							color : #900;
+						}
+
+						#projects #projectlist p a span {
+                            display : block;
+							margin-bottom : 0.5em;
+        				}
+
+        				
+ 				/*
+				 * projects : individual project layout : list
+				 */
+        				#projects #projectlist.list p {
+        					float : none;
+        					width : auto;
+        					margin-bottom : 0.5em;
+        				}
+
+						#projects #projectlist.list p a {
+							padding : 0.2em 0 0.2em 2.5em;
+							background-position : 0.2em 0.3em;
+						}
+        				
+        				#projects #projectlist.list p a strong {
+        					display : inline;
+        					float : left;
+        					width : 40%;
+        					border : 0;
+        					margin : 0;
+							padding : 0.25em 0 0.1em 0;
+        					white-space : nowrap;
+        				}
+
+						#projects #projectlist.list p a span {
+                            display : inline;
+        					float : left;
+        					width : 14%;
+        					padding : 0.4em 0 0.1em 0;
+        					margin : 0;
+        				}
+        				
+
+				/*
+				 * preview span element
+				 */
+						#projects #projectlist p a span.preview {
+							padding-top : 0.1em;
+						}
+						
+						#projects #projectlist.grid p a span.preview {
+							float : right;
+						}
+						
+						#projects #projectlist.list p a span.preview {
+							float : left;
+						}
+						
+						#projects #projectlist p a span.preview span.site,
+						#projects #projectlist p a span.preview span.code,
+						#projects #projectlist p a span.preview span.image {
+							width : 7em;
+							padding : 0.1em 0.5em 0.2em 0.5em;
+							background-image : url('../img/external.gif');
+							background-position : 98% 30%;
+							background-repeat : no-repeat;
+							border : 1px solid #aaa;
+						}
+						
+						#projects #projectlist p a span.preview span.site {
+							width : 7.7em;
+						}
+						
+						#projects #projectlist p a span.preview span.image {
+							width : 9em;
+						}
+						
+						#projects #projectlist p a span.preview span.site:hover,
+						#projects #projectlist p a span.preview span.code:hover,
+						#projects #projectlist p a span.preview span.image:hover,
+						#projects #projectlist p a span.preview span.site.sfhover,
+						#projects #projectlist p a span.preview span.code.sfhover,
+						#projects #projectlist p a span.preview span.image.sfhover {
+							background-color : #ddd;
+							border-color : #aaa;
+							color : #000;
+						}
+						
+						
+				
+				/*
+				 * type span element
+				 */
+						#projects #projectlist p a span.type { }
+
+				/*
+				 * details span element
+				 */
+						#projects #projectlist p a span.details { }
+
+						
+				/*
+				 * date span element
+				 */
+						#projects #projectlist.list p a span.date {
+							float : right;
+							width : 17%;
+						}
+				
+
+                /* 
+				 * project link names (directory names) 
+				 */
+						#projects #projectlist p.file a {
+							background-image : url('../img/file.gif');
+						}
+				
+						#projects #projectlist p.directory a {
+							background-image : url('../img/folder.gif');
+						}
+				
+						/*
+						 * projects : project list : specific file-type images
+						 * !important to overwrite skins
+						 */
+							   .file.jpg a { background-image : url('../img/mimetypes/cms_assetimg_sm_jpg.gif') !important; }
+							   .file.pdf a { background-image : url('../img/mimetypes/cms_assetimg_sm_pdf.gif') !important; }
+							   .file.avi a { background-image : url('../img/mimetypes/cms_assetimg_sm_avi.gif') !important; }
+							   .file.mov a { background-image : url('../img/mimetypes/cms_assetimg_sm_mov.gif') !important; }
+							   .file.doc a { background-image : url('../img/mimetypes/cms_assetimg_sm_doc.gif') !important; }
+							   .file.ppt a { background-image : url('../img/mimetypes/cms_assetimg_sm_ppt.gif') !important; }
+							   .file.ttf a { background-image : url('../img/mimetypes/cms_assetimg_sm_ttf.gif') !important; }
+							   .file.txt a { background-image : url('../img/mimetypes/cms_assetimg_sm_txt.gif') !important; }
+							   .file.zip a { background-image : url('../img/mimetypes/cms_assetimg_sm_zip.gif') !important; }
+							   .file.swf a { background-image : url('../img/mimetypes/cms_assetimg_sm_swf.gif') !important; }
+							   .file.doc a { background-image : url('../img/mimetypes/cms_assetimg_sm_doc.gif') !important; }
+							   .file.dot a { background-image : url('../img/mimetypes/cms_assetimg_sm_dot.gif') !important; }
+							   .file.flv a { background-image : url('../img/mimetypes/cms_assetimg_sm_flv.gif') !important; }
+							   .file.fla a { background-image : url('../img/mimetypes/cms_assetimg_sm_fla.gif') !important; }
+							   .file.xls a { background-image : url('../img/mimetypes/cms_assetimg_sm_xls.gif') !important; }
+							   .file.sql a { background-image : url('../img/mimetypes/cms_assetimg_sm_sql.gif') !important; }
+							   .file.psd a { background-image : url('../img/mimetypes/cms_assetimg_sm_psd.gif') !important; }
+							   .file.misc a { background-image : url('../img/mimetypes/cms_assetimg_sm_xxx.gif') !important; }
+
+				
+		/*
+		 * Footer
+		 */
+				#footer {
+					width : 100%;
+					border-top : 2px solid #000;
+					padding-top : 10px;
+				}
+				
+				#footer dl#server {
+					float : left;
+				}
+				
+				#footer p {
+					float : right;
+				}
+				
+				#footer p a.externallink {
+					display : block;
+					padding-right : 12px;
+					background : url('../img/external.gif') 100% 0% no-repeat;
+				}

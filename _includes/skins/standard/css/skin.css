@@ -1,0 +1,245 @@
+/** 
+ * CSS for Boris - Localhost browser
+ * 
+ * @author Pete Goodman
+ * 
+ * SKIN - Standard
+ * 
+ * Colours:
+ * #fff : main bg
+ * #eee : feint bg
+ * #000 : text
+ * #c00 : link
+ * #00f : link (hovered)
+ * #333 : borders
+ * #666 : project text
+ * #fafafa : project hover background
+ * 
+ */
+
+/* 
+ * Global selectors and classes
+ */
+		/* body */
+		body.standard {	
+			background-color : #fff;
+			color : #000;
+		}
+
+
+		/* 
+		 * links
+		 */
+				.standard a { 
+					color: #c00; 
+				}
+
+				.standard a:hover { 
+					color: #009; 
+				}
+
+
+		/*
+		 * global classes
+		 */
+				/*
+				 * ul --> change | into | horizontal | navigation | links
+				 */
+				        /* float selected element and all other links */
+				        .standard ul.horiznavlist li,
+				 		.standard dl.horiznavlist dt,
+						.standard dl.horiznavlist dd {
+					        border-right : 1px solid #333;
+				        }
+
+						
+/*
+ * global ids / areas
+ */
+		/*
+		 * header
+		 */
+			 	.standard #header {
+					background-image : url("../img/site_icon.gif");
+				}
+				
+				/* 
+				 *  header : Breadcrumb navigation -- styling the nested lists
+				 */
+						.standard #header ul#crumb li a {
+							background-image : url('../img/slash.gif');
+						}
+		
+		/*
+		 * Options area 
+		 */
+		        .standard #options {
+                    border-bottom : 2px solid #000;
+		        }
+				
+				/*
+		         * Options area : initial menu
+		         */
+         		        .standard #options ul li a {
+		                    background-image : url('../img/bullet_down.gif');
+        		        }
+  
+        		        
+        		/*
+        		 * Options area : sub menus
+        		 */
+        		        .standard #options ul li ul {
+        	                border : 1px solid #ccc;
+							border-top : 0;
+        	            }
+
+						.standard #options ul li ul li {
+							background : #fff;
+						}
+        	            
+                        .standard #options ul li ul li a {
+                            background-image : url('../img/bullet_right.gif');
+                        }
+                        
+                        .standard #options ul li ul li a strong {
+                            background-image : url('../img/option_selected.gif');
+                        }
+                        
+                        /*
+                         * Options area : sub menus : option images
+                         */
+                                .standard #options ul li ul li#options-view-list a {
+                                    background-image : url('../img/options_view_list.gif');
+                                }
+                                
+                                .standard #options ul li ul li#options-view-grid a {
+                                    background-image : url('../img/options_view_grid.gif');
+                                }
+	            
+
+		/*
+		 * content
+		 */
+				.standard #projects {
+					background : #eee;
+				}
+
+				
+		/*
+		 * projects : tabs 
+		 */
+				.standard #projects ul#projecttabs {
+					border-bottom : 1px solid #000;
+					background : #fff;
+				}
+				
+				/* hidden class, switchable in options menu */
+				.standard #projects.full ul#projecttabs {
+			        display : none;
+			    }
+				
+				.standard #projects ul#projecttabs li a {
+					border-bottom : 1px solid #000;
+					color : #000;
+				}
+				
+				.standard #projects ul#projecttabs li a.selected,
+				.standard #projects ul#projecttabs li a:hover {
+					background : #eee;
+				}
+				
+				.standard #projects ul#projecttabs li a.selected {
+				}
+		
+
+		/*
+		 * projects : individual project layout
+		 */
+				/*
+				 * projects : individual project layout : grid
+				 */
+        				.standard #projects #projectlist p,
+        				.standard #projects #projectlist.grid p {
+        					background : #fff;
+        				}
+
+						/* 
+						 * link element surrounds each project 
+						 */ 
+								.standard #projects #projectlist p a,
+								.standard #projects #projectlist p.grid a {
+									border : 1px solid #fff;
+									color : #666;
+								}
+
+								.standard #projects #projectlist p a:hover,
+								.standard #projects #projectlist p.grid a:hover {
+									color : #000;
+									border-color : #ccc;
+									background-color : #fafafa;
+								}
+
+								.standard #projects #projectlist p a strong,
+								.standard #projects #projectlist p.grid a strong {
+									border-top : 2px solid #ccc;
+									border-bottom : 1px solid #ccc;
+									color : #c00;
+								}
+
+								.standard #projects #projectlist p a:hover strong,
+								.standard #projects #projectlist p.grid a:hover strong {
+									color : #900;
+								}
+
+ 				/*
+				 * projects : individual project layout : list
+				 */
+        				.standard #projects #projectlist.list p {
+        					background : #fff;
+        				}
+
+						.standard #projects #projectlist.list p a strong {
+							border : 0;
+						}
+
+
+             	/*
+				 * preview span element
+				 */
+						.standard #projects #projectlist p a span.preview span.site,
+						.standard #projects #projectlist p a span.preview span.code,
+						.standard #projects #projectlist p a span.preview span.image {
+							border-color : #aaa;
+						}
+
+						.standard #projects #projectlist p a span.preview span.site:hover,
+						.standard #projects #projectlist p a span.preview span.code:hover,
+						.standard #projects #projectlist p a span.preview span.image:hover {
+							background-color : #ddd;
+							border-color : #aaa;
+							color : #000;
+						}
+
+				/* 
+				 * project link names (directory names) 
+				 */
+						.standard #projects #projectlist p.file a {
+							background-image : url('../img/file.gif');
+						}
+
+						.standard #projects #projectlist p.directory a {
+							background-image : url('../img/folder.gif');
+						}
+
+
+	
+		/*
+		 * Footer
+		 */
+				.standard #footer {
+					border-top : 2px solid #000;
+				}
+				
+				.standard #footer p a.externallink {
+					background : url('../img/external.gif') 100% 0% no-repeat;
+				}
