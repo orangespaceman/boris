@@ -32,4 +32,4 @@ For slightly longer instructions see the installation instructions in the docs f
 
 You can now add a bookmarklet to your browser by dragging a link to your bookmark bar. When looking at any page, site or file on your local server, click on the Borisify link to open that directory through Boris.
 
-More details [http://petegoodman.com/labs/boris-localhost-browser/ here]
+More details [http://petegoodman.com/labs/boris-localhost-browser/](here)
