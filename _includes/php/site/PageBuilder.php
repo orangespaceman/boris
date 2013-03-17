@@ -1,10 +1,10 @@
-<?php 
+<?php
 /**
- * This class builds the main html header and footer for each page  
- * 
+ * This class builds the main html header and footer for each page
+ *
  * Boris : Localhost Browser
  * A Localhost browser that enables you to quickly look through all the files on your local web server
- * Any suggestions, comments, compliments and complaints happily received.  
+ * Any suggestions, comments, compliments and complaints happily received.
  *
  * @author Pete Goodman - pete@petegoodman.com
  */
@@ -12,27 +12,21 @@
 /**
  * A class to generate the HTML for common page elements.
  */
-include_once(INCLUDE_PATH."/_includes/php/lib/php4/singleton.php"); 
+include_once(INCLUDE_PATH."/_includes/php/lib/php4/singleton.php");
 include_once(INCLUDE_PATH."/_includes/php/lib/localization/Localization.php");
 
 class PageBuilder {
-	
-	/* 
-	 * PHP4 Constructor initialisation
-	 */
-	function PageBuilder () {
-	    $this -> __construct();
-	}
-	
+
+
 	/**
 	 * Constructor
-	 * 
+	 *
 	 */
     function __construct() {
 
 		//$this -> strings = Localization::getInstance();
 		$this -> strings =& singleton('Localization');
-		
+
     	// condition : set cookies for options, if set
     	if (isset($_GET['type'])) {
             switch($_GET['type']) {
@@ -57,7 +51,7 @@ class PageBuilder {
 
 	}
 
-	
+
 	/**
 	 * Builds the top of the HTML page, including meta data and linking in
 	 * javascript functionality and the style sheets.
@@ -66,7 +60,7 @@ class PageBuilder {
 	 * @access public
 	 */
     function buildPageTop() {
-	
+
 		// create skin includes
 		$skinIncludes = $this->buildSkinIncludes();
 
@@ -80,7 +74,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 
 	<meta http-equiv="imagetoolbar" content="no" />
 	<meta name="MSSmartTagsPreventParsing" content="true" />
-	<link rel="shortcut icon" href="'.INCLUDE_PATH.'/_includes/img/favicon.ico" />	
+	<link rel="shortcut icon" href="'.INCLUDE_PATH.'/_includes/img/favicon.ico" />
 
 	<meta name="description" content="Boris: '.$this->strings->getString('metadescription').'" />
 	<meta name="keywords" content="" />
@@ -89,35 +83,35 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 		@import "'.INCLUDE_PATH.'/_includes/css/global.css";
 		@import "'.INCLUDE_PATH.'/_includes/css/thickbox.css";
 		';
-		
+
 		// loop through an insert each skin
 		foreach($skinIncludes as $skin) {
 			echo '
 		@import "'.INCLUDE_PATH.'/_includes/skins/'.$skin.'/css/skin.css";
 			';
 		}
-		
+
 		echo '
 	</style>
 
-	<!--[if lt IE 7]>	
+	<!--[if lt IE 7]>
 		<link rel="stylesheet" type="text/css" href="'.INCLUDE_PATH.'/_includes/css/ie6.css" media="screen" />
 	<![endif]-->
 	<!--[if IE 7]>
 		<link rel="stylesheet" type="text/css" href="'.INCLUDE_PATH.'/_includes/css/ie7.css" media="screen" />
 	<![endif]-->
-	
+
 	<script type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/lib/swfaddress/swfaddress.js"></script>
 	<script type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/lib/swfaddress/swfaddress-optimizer.js"></script>
-	
+
 	<script type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/lib/jquery/jquery-1.2.6.min.js"></script>
 	<script type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/site/boris.js"></script>
 
 	<script id="libman" type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/lib/libman/libman.js"></script>
 	<script type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/lib/cookies/cookies.js"></script>
-	
-	<script type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/lib/thickbox/thickbox.js"></script>	
-	<script type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/lib/suckerfish/sfhover.js"></script>	
+
+	<script type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/lib/thickbox/thickbox.js"></script>
+	<script type="text/javascript" src="'.INCLUDE_PATH.'/_includes/js/lib/suckerfish/sfhover.js"></script>
 
 </head>
 		';
@@ -154,14 +148,14 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
     		                <li id="options-view-list"><a href="?layout=list&amp;type=view"><strong>'.$this->strings->getString('list').'</strong></a></li>
 		                ';
 		            }
-		            
+
 		            echo '
 		            </ul>
 		        </li>
 		        <li id="options-tabs"><a href="#">'.$this->strings->getString('tabs').'</a>
 		            <ul>
                     ';
-    			     
+
     			     // condition : search for a cookie for the project list layout type
     		         if (isset($_COOKIE['optionsTabs']) && $_COOKIE['optionsTabs'] == "hide") {
     		            echo '
@@ -181,7 +175,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
                 <li id="options-transitions"><a href="#">'.$this->strings->getString('transitions').'</a>
 		            <ul>
 		            ';
-		            
+
 		             // condition : search for a cookie for the project list layout type
        		         if (isset($_COOKIE['optionsTransitions']) && $_COOKIE['optionsTransitions'] == "fast") {
        		            echo '
@@ -203,7 +197,7 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
                            <li id="options-transitions-off"><a href="?transitions=off&amp;type=transitions">'.$this->strings->getString('off').'</a></li>
                         ';
                     }
-                        
+
                         echo '
                     </ul>
                 </li>
@@ -226,19 +220,19 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 							$strong = "";
 							$closestrong = "";
 						}
-						
+
 						echo '
 							<li id="options-colourscheme-'.$skin.'"><a href="?scheme='.$skin.'&amp;type=colourscheme">'.$strong.ucfirst($skin).$closestrong.'</a></li>
 						';
 					}
-	            
+
 		            echo '
 		            </ul>
 		        </li>
-		';        
+		';
 
 		echo '
-		
+
 		<li id="options-language"><a href="#">'.$this->strings->getString('language').'</a>
 		            <ul id="languageselect">
 		            ';
@@ -261,12 +255,12 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 								$strong = "";
 								$closestrong = "";
 							}
-						}						
+						}
 						echo '
 							<li id="options-language-'.$language[0].'"><a href="?language='.$language[0].'&amp;type=language">'.$strong.$language[1].$closestrong.'</a></li>
 						';
 					}
-					
+
 		            echo '
 		            </ul>
 		        </li>
@@ -294,34 +288,34 @@ echo '<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
 </body>
 </html>';
 	}
-	
-		
+
+
 	/**
 	 * Retrieve all skins from the skins directory
-	 * 
+	 *
 	 * @return array $return An array of potential skins
 	 * @access private
 	 */
 	 function buildSkinIncludes() {
-	
+
 		// create an array to return
 		$return = array();
-		
+
 		// open the directory
 		//$dirContent = scandir(INCLUDE_PATH.'/_includes/skins/');
-		
+
 		// loop through the contents
         $dh  = opendir(INCLUDE_PATH.'/_includes/skins/');
         while (false !== ($file = readdir($dh))) {
-        
-            
+
+
         // loop through all files, checking if we should use the current one
 		//foreach($dirContent as $key => $file) {
 			if (strpos($file, ".") !== 0) {
 				$return[] = $file;
 			}
 		}
-		
+
 		// return the result
 		return $return;
 	}

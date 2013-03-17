@@ -10,14 +10,14 @@
 	 *	php5 only
 	 */
 	class Localization {
-	
+
 		var $instance = NULL;
-		
+
 		/**
 		 *	Path for language files...
 		 */
 		var $path = 'languages/';
-		
+
 		/**
 		 * A list of filenames & directory names to ignore
 		 *
@@ -33,7 +33,7 @@
 			'.htaccess',
 			'Thumbs.db'
 		);
-		
+
 		/**
 		 * A list of form variables to ignore
 		 *
@@ -46,50 +46,44 @@
 			'author',
 			'submit'
 		);
-	
+
 		/**
 		 * Main array to hold all languages
 		 *
 		 * @var array $languages The languages avaialable
 		 */
 		var $languages = array();
-	
+
 		/**
 		 *	Test mode off
 		 */
-		var $testmode = false; 
-		
+		var $testmode = false;
+
 		/**
 		 *	Current language
 		 */
 		var $currentLanguage = 'en_EN';
-		
-		/* 
-		 * PHP4 Constructor initialisation
-		 */
-		function Localization() {
-		    $this->__construct();
-		}
-		
-		
+
+
+
 		/**
 		 * Constructor
-		 * 
+		 *
 		 */
 	    function __construct() {
-		
+
 			//Get all available languages and build up the languages array
 			$path = dirname(__FILE__) . '/' . $this -> path;
-			
+
 			// get the ignore list, in local scope (can't use $this-> later on)
 			$ignorelist = $this->ignorelist;
-		
+
 			if (is_dir($path)) {
-				
+
 				// loop through the contents
                 $dh  = opendir($path);
                 while (false !== ($file = readdir($dh))) {
-                    				
+
 					// skip over any files in the ignore list, and mac-only files starting with ._
 					if (!in_array($file, $ignorelist) && (strpos($file, "._") !== 0)) {
 						//If all is good, load in the language file...
@@ -97,7 +91,7 @@
 					}
 				}
 			}
-			
+
 			//Set default language is not set in cookie...
 			if (!isset($_COOKIE['localizationLanguage'])) {
 				setcookie('localizationLanguage', $this->currentLanguage, time()+60*60*24*30, '/', false, 0);
@@ -106,7 +100,7 @@
 				$this -> setLanguage( $_COOKIE['localizationLanguage'] );
 			}
 		}
-		
+
 		/**
 		 *	Return array of all available languages...
 		 *	Will return locale and language of each loaded file as an array...
@@ -118,17 +112,17 @@
 			}
 			return $ret;
 		}
-		
+
 		/**
 		 *	Return instance of singleton
 		 */
 		function getInstance() {
 			if(!isset($this->instance)){
 				$this->$instance = new Localization();
-			}		
+			}
 			return $this->$instance;
 		}
-		
+
 		/**
 		 *	Return localized string....
 		 */
@@ -148,7 +142,7 @@
 				}
 			}
 		}
-		
+
 		/**
 		 *	Return localized array...
 		 *	Loops through all languages and returns a single array with all language translations for the string...
@@ -161,7 +155,7 @@
 			}
 			return $ret;
 		}
-		
+
 		/**
 		 *	Set language
 		 *	Takes a locale as parameter and sets the active language string array...
@@ -173,12 +167,12 @@
 						$this -> currentLanguage = $i;
 						$this -> setLocale();
 						return true;
-					} 
+					}
 				}
 			}
 			return false;
 		}
-		
+
 		/**
 		 *	Set locale
 		 */
@@ -189,7 +183,7 @@
 			//Set the locale so all content generation funcions in php will return the right language (strftime, date, etc)...
 			setlocale( LC_ALL , $locale, $windowslocale );
 		}
-		
+
 		/**
 		 *	Create language
 		 */
@@ -200,7 +194,7 @@
 <form action="" method="post" id="localizationForm">
 	<fieldset>
 		<legend>Meta Data</legend>
-		';	
+		';
 			foreach( $this -> languages [$lang]['metadata'] as $key => $value ){
 				$ret .='
 		<div class="formelement">
@@ -209,7 +203,7 @@
 		</div>
 				';
 			}
-						
+
 			$ret .= '
 		<div class="formelement">
 			<label for="author">Author :</label>
@@ -224,9 +218,9 @@
 		<div class="formelement">
 			<label for="'.$key.'">{ '.$key.' } :</label>
 			<input type="text" id="'.$key.'" name="'.$key.'" value="'.$value.'" />
-		</div>				
+		</div>
 				';
-			}		
+			}
 			$ret .= '
 		<div class="formelement">
 			<input type="submit" id="submit" name="submit" value="Save Language" />
@@ -236,7 +230,7 @@
 			';
 			return $ret;
 		}
-		
+
 		/**
 		 *	Save language form data
 		 */
@@ -281,7 +275,7 @@
 				$filedata .= '
 			)
 		);
-	
+
 ?>';
 				fwrite( $file , $filedata );
 				fclose( $file );
@@ -289,10 +283,10 @@
 			}
 			return false;
 		}
-		
+
 		/**
 		 *	Returns a form array stripped of all NON string data
-		 */		
+		 */
 		function cleanFormData( $data ){
 			$cleanArray = array();
 			foreach($data as $key => $value){
@@ -302,7 +296,7 @@
 			}
 			return $cleanArray;
 		}
-		
+
 		/**
 		 *	Return a javascript version of the strings array
 		 */
@@ -312,13 +306,13 @@
 				<script type="text/javascript">
 				// <![CDATA[
 					var strings = []';
-			
-			
+
+
 			foreach( $this->languages[$lang]['strings'] as $key => $value ){
 				$ret .= '
 					strings[\''.$key.'\'] = "'.$value.'";';
-			}		
-			
+			}
+
 			$ret .= '
 				// ]]>
 				</script>

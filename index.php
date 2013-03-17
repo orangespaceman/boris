@@ -1,9 +1,9 @@
 <?php
 /**
  * Boris : Localhost Browser
- * 
+ *
  * A Localhost browser that enables you to quickly look through all the files on your local web server
- * Any suggestions, comments, compliments and complaints happily received.  
+ * Any suggestions, comments, compliments and complaints happily received.
  *
  * http://github.com/thegingerbloke/boris/
  *
@@ -24,8 +24,8 @@
 	if (!defined('TAB_PATH')) {
 	    define('TAB_PATH', "./");
     }
-    
-    
+
+
     // define WEB_ROOT_PATH
 	if (!defined('INDEX_ROOT_PATH')) {
 	    define('INDEX_ROOT_PATH', "./");
@@ -66,7 +66,7 @@
 	// retreive Boris version number, for footer
 	//$rc = new RevisionCheck();
 	//$revision = $rc->getLocalRevision();
-	
+
 	// build the top of the page
 	$pagebuilder = new PageBuilder();
 	$pagebuilder->buildPageTop();
@@ -74,24 +74,24 @@
 ?>
 
 	<div id="content" class="clearfix">
-	
+
 		<div id="projects" class="clearfix<?php echo $tabsview; ?>">
 
 			<div id="projectlist" class="<?php echo $optionsview; ?>">
-				<?php 
+				<?php
 					// retrieve and insert the initial file list (echo inside method, for JS)
 					$filelist = $boris->createFileList();
 				?>
 			</div>
-		
+
 			<ul id="projecttabs"><?php echo '<!--'; //IE6 fix ?>
-				<?php 
+				<?php
 					// loop through tabs
 					foreach ($tabs as $key => $tab) {
-					
+
 						// condition : check if this is the currently selected tab
 						$selected = ($tab == $selectedtab) ? ' class="selected"' : "";
-					
+
 						echo '
 				--><li><a href="./?tab='.$key.'"'.$selected.' rel="'.$tab.'">'.$key.'</a></li><!--
 						';
@@ -103,24 +103,24 @@
 		<div id="footer" class="clearfix">
 			<dl id="server" class="horiznavlist clearfix">
 				<dt class="first"><?php echo $strings->getString('server'); ?>: </dt>
-			    <?php 
+			    <?php
 			        // insert localhost value
 			        $localhost = $boris->getLocalhost();
 			        echo $localhost;
 			    ?>
 				<dd>
-					<?php 
+					<?php
 						// Insert apache version number
 						if (function_exists('apache_get_version')) {
 						    $apache_version = explode('PHP', apache_get_version());
-						    echo $apache_version[0]; 
+						    echo $apache_version[0];
 						}
-					
+
 						// to do, calculate MySQL server version (if present)
 					?>
 				</dd>
 				<dd>PHP: <?php echo phpversion(); ?></dd>
-                <?php 
+                <?php
                     // condition : if there is a phpMyAdmin directory set, display link
                     if(isset($phpMyAdminDir)) {
                         echo '
