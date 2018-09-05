@@ -2,7 +2,6 @@
 /**
  * This static class offers some helpful File-related methods
  *
- * @author pete goodman
  */
 
 

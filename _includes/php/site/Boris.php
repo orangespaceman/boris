@@ -6,7 +6,6 @@
  * A Localhost browser that enables you to quickly look through all the files on your local web server
  * Any suggestions, comments, compliments and complaints happily received.
  *
- * @author Pete Goodman - pete@petegoodman.com
  */
 
 // import filetype helper class

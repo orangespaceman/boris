@@ -1,11 +1,9 @@
-/** 
+/**
  * CSS for Boris - Localhost browser
- *
- * @author Pete Goodman
  *
  */
 
-/* 
+/*
  * Global selectors and classes
  */
 
@@ -13,13 +11,13 @@
 		* { margin : 0px; padding : 0px; }
 
 		/* makes browsers always display vertical scrollbar */
-		html { 
+		html {
 			height : 100.01%;
-			padding-bottom : 1px; 
-		} 
-		
+			padding-bottom : 1px;
+		}
+
 		/* body */
-		body {	
+		body {
 			font : 62.5%/1.35 Geneva, Verdana, Arial, helvetica, sans-serif; /* reset 1em to 10px */
 			padding : 15px;
 			background-color : #fff;
@@ -27,7 +25,7 @@
 		}
 
 
-		/* 
+		/*
 		 * headings
 		 */
 				/* common properties */
@@ -36,7 +34,7 @@
 					font-weight : normal;
 				}
 
-				h1 { 
+				h1 {
 					float : left;
 					width : auto;
 					margin : 0;
@@ -44,45 +42,45 @@
 					font-size : 1.8em;
 				}
 
-				h2 { 
+				h2 {
 					font-size : 1.4em;
-					margin : 0;	
+					margin : 0;
 				}
 
 				h3 {
 					font-size : 1.2em;
-					margin : 0;	
+					margin : 0;
 				}
 
-		/* 
+		/*
 		 * links
 		 */
-				a { 
-					text-decoration: none; 
-					color: #c00; 
+				a {
+					text-decoration: none;
+					color: #c00;
 				}
 
-				a:hover { 
-					text-decoration: none; 
-					color: #000; 
+				a:hover {
+					text-decoration: none;
+					color: #000;
 				}
 
-		/* 
+		/*
 		 * lists
 		 */
-		 		ul, 
+		 		ul,
 				ol,
 				dl {
 					margin-bottom : 2em;
 					list-style : none;
 				}
 
-				li, 
-				dt, 
+				li,
+				dt,
 				dd {
 					font-size : 1.1em;
 				}
-				
+
 				dt {
 					font-weight : bold;
 				}
@@ -102,13 +100,13 @@
 						.clearfix {
 						    display : block;
 						}
-						
+
 						/* Gecko-based browsers */
 						 .clearfix:after {
-						     content : "."; 
-						     display : block; 
-						     height : 0px; 
-						     clear : both; 
+						     content : ".";
+						     display : block;
+						     height : 0px;
+						     clear : both;
 						     visibility : hidden;
 						}
 
@@ -125,7 +123,7 @@
 				            border-right : 1px solid #333;
 				            background : none;
 				        }
-				
+
 				        /* remove left padding from first item in a list */
 				        ul.horiznavlist li.first,
 						dl.horiznavlist dt.first,
@@ -140,7 +138,7 @@
 				            padding-right : 0px !important;
 				            border-right : 0px !important;
 				        }
-	
+
 
 
 /*
@@ -155,19 +153,19 @@
 					padding-bottom : 0;
 					background : url("../img/site_icon.gif") transparent no-repeat top left;
 				}
-				
-				/* 
+
+				/*
 				 *  header : Breadcrumb navigation -- styling the nested lists
 				 */
 						#header ul#crumb {
 							clear : left;
 							padding-left : 60px;
         					margin-bottom : 0;
-							font-size : 1.3em; 
+							font-size : 1.3em;
 						}
-						
+
 						/* make all crumb lists inline */
-						#header ul#crumb ul { 
+						#header ul#crumb ul {
 							display : inline;
 							padding : 0;
 							margin : 0;
@@ -181,7 +179,7 @@
 							display : inline;
 							font-size : 1em; /* force all nested elements to be the same font size */
 						}
-							
+
 						#header ul#crumb li a {
 							float : left;
 							display : block;
@@ -190,16 +188,16 @@
 							padding-right : 1em;
 							margin-right : 0.4em;
 						}
-				
+
 		/*
-		 * Options area 
+		 * Options area
 		 */
 		        #options {
 		            width : 100%;
 		            padding-bottom : 0.2em;
                     border-bottom : 2px solid #000;
 		        }
-		        
+
 		        /*
 		         * Options area : initial menu
 		         */
@@ -209,7 +207,7 @@
         		            padding : 0;
         		            font-size : 1em;
         		        }
-		        
+
         		        #options ul li {
         		            float : right;
         		            margin-left : 2em;
@@ -217,12 +215,12 @@
         		            padding : 0 2em 0 1em;
 							z-index : 11;
         		        }
-		        
+
         		        #options ul li a {
 		                    padding-left : 10px;
 		                    background : url('../img/bullet_down.gif') transparent no-repeat 0% 50%;
         		        }
-        		        
+
         		/*
         		 * Options area : sub menus
         		 */
@@ -238,7 +236,7 @@
         	                z-index : 10;
         	                width : 100%;
         	            }
-        	            
+
         	            /* overwrite positioning for sub-elements */
         	            #options ul li ul li {
     	                    float : none;
@@ -247,24 +245,24 @@
         	                padding : 0.1em 0.3em;
 							background : #fff;
     	                }
-                
+
                         /* show sub menus on hover */
                         #options ul li:hover ul,
                         #options ul li.sfhover ul {
                             display : block;
                         }
-                        
+
                         #options ul li ul li a {
                             display : block;
                             background-image : url('../img/bullet_right.gif');
                         }
-                        
+
                         #options ul li ul li a strong {
                             background : url('../img/option_selected.gif') transparent no-repeat 100% 50%;
                             padding-right : 15px;
                             font-weight : normal;
                         }
-                        
+
                         /*
                          * Options area : sub menus : option images
                          */
@@ -272,20 +270,20 @@
                                     padding-left : 14px;
                                     background-position : 0 0;
                                 }
-                                
+
                                 #options ul li#options-view li a:hover {
                                     background-position : 0 -34px;
                                 }
-                                
+
                                 #options ul li ul li#options-view-list a {
                                     background-image : url('../img/options_view_list.gif');
                                 }
-                                
+
                                 #options ul li ul li#options-view-grid a {
                                     background-image : url('../img/options_view_grid.gif');
                                 }
-	            
-				
+
+
 
 		/*
 		 * content
@@ -293,20 +291,20 @@
 			 	#content {
 					width : 100%;
 				}
-				
+
 				#projects {
 					padding-left : 15em;
 					position : relative;
 					overflow : hidden;
 					background : #eee;
 				}
-				
+
 				/* full-width project list when tabs are hidden (from options menu) */
 				#projects.full {
 			        padding-left : 0;
 			    }
 
-				
+
 		/*
 		 * projects : tabs (left nav)
 		 */
@@ -320,32 +318,32 @@
 					background : #fff;
 					overflow : hidden;
 				}
-				
+
 				/* hidden class, switchable in options menu */
 				#projects.full ul#projecttabs {
 			        display : none;
 			    }
-				
+
 				#projects ul#projecttabs li {
 				}
-				
+
 				#projects ul#projecttabs li a {
 					display : block;
 					padding : 0.5em;
 					border-bottom : 1px solid #000;
 					color : #000;
 				}
-				
+
 				#projects ul#projecttabs li a.selected,
 				#projects ul#projecttabs li a:hover {
 					background : #eee;
 				}
-				
+
 				#projects ul#projecttabs li a.selected {
 					font-weight : bold;
 				}
-		
-		
+
+
 		/*
 		 * projects : individual project layout
 		 */
@@ -356,7 +354,7 @@
 					padding-bottom : 1px; /* give the project list some content, so it doesn't disappear off screen when empty */
 				}
 
-				
+
 				/*
 				 * projects : individual project layout : grid
 				 */
@@ -369,16 +367,16 @@
 							padding-bottom : 0;
 							font-size : 0.9em;
         				}
-        				
+
         				/* when no tabs are shown, increase the width of the projects */
         				#projects.full #projectlist p,
         				#projects.full #projectlist.grid p {
         			        width : 29.5em; /* optimise for 1024 & 1280 width */
         			    }
 
-						/* 
-						 * link element surrounds each project 
-						 */ 
+						/*
+						 * link element surrounds each project
+						 */
 								#projects #projectlist p a,
 								#projects #projectlist p.grid a {
 									display : block;
@@ -418,7 +416,7 @@
 							margin-bottom : 0.5em;
         				}
 
-        				
+
  				/*
 				 * projects : individual project layout : list
 				 */
@@ -432,7 +430,7 @@
 							padding : 0.2em 0 0.2em 2.5em;
 							background-position : 0.2em 0.3em;
 						}
-        				
+
         				#projects #projectlist.list p a strong {
         					display : inline;
         					float : left;
@@ -450,7 +448,7 @@
         					padding : 0.4em 0 0.1em 0;
         					margin : 0;
         				}
-        				
+
 
 				/*
 				 * preview span element
@@ -458,15 +456,15 @@
 						#projects #projectlist p a span.preview {
 							padding-top : 0.1em;
 						}
-						
+
 						#projects #projectlist.grid p a span.preview {
 							float : right;
 						}
-						
+
 						#projects #projectlist.list p a span.preview {
 							float : left;
 						}
-						
+
 						#projects #projectlist p a span.preview span.site,
 						#projects #projectlist p a span.preview span.code,
 						#projects #projectlist p a span.preview span.image {
@@ -477,15 +475,15 @@
 							background-repeat : no-repeat;
 							border : 1px solid #aaa;
 						}
-						
+
 						#projects #projectlist p a span.preview span.site {
 							width : 7.7em;
 						}
-						
+
 						#projects #projectlist p a span.preview span.image {
 							width : 9em;
 						}
-						
+
 						#projects #projectlist p a span.preview span.site:hover,
 						#projects #projectlist p a span.preview span.code:hover,
 						#projects #projectlist p a span.preview span.image:hover,
@@ -496,9 +494,9 @@
 							border-color : #aaa;
 							color : #000;
 						}
-						
-						
-				
+
+
+
 				/*
 				 * type span element
 				 */
@@ -509,7 +507,7 @@
 				 */
 						#projects #projectlist p a span.details { }
 
-						
+
 				/*
 				 * date span element
 				 */
@@ -517,19 +515,19 @@
 							float : right;
 							width : 17%;
 						}
-				
 
-                /* 
-				 * project link names (directory names) 
+
+                /*
+				 * project link names (directory names)
 				 */
 						#projects #projectlist p.file a {
 							background-image : url('../img/file.gif');
 						}
-				
+
 						#projects #projectlist p.directory a {
 							background-image : url('../img/folder.gif');
 						}
-				
+
 						/*
 						 * projects : project list : specific file-type images
 						 * !important to overwrite skins
@@ -553,7 +551,7 @@
 							   .file.psd a { background-image : url('../img/mimetypes/cms_assetimg_sm_psd.gif') !important; }
 							   .file.misc a { background-image : url('../img/mimetypes/cms_assetimg_sm_xxx.gif') !important; }
 
-				
+
 		/*
 		 * Footer
 		 */
@@ -562,15 +560,15 @@
 					border-top : 2px solid #000;
 					padding-top : 10px;
 				}
-				
+
 				#footer dl#server {
 					float : left;
 				}
-				
+
 				#footer p {
 					float : right;
 				}
-				
+
 				#footer p a.externallink {
 					display : block;
 					padding-right : 12px;

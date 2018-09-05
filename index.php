@@ -5,9 +5,6 @@
  * A Localhost browser that enables you to quickly look through all the files on your local web server
  * Any suggestions, comments, compliments and complaints happily received.
  *
- * http://github.com/thegingerbloke/boris/
- *
- * @author Pete Goodman - pete@petegoodman.com
  */
     // condition : display php info?  (Link in footer)
 	if (isset($_GET['phpinfo'])) {
@@ -130,7 +127,7 @@
 			    ?>
 				<dd class="last"><a href="?phpinfo">phpinfo( )</a></dd>
 			</dl>
-			<p><a href="http://github.com/thegingerbloke/boris/" class="externallink">Boris</a></p>
+			<p><a href="http://github.com/orangespaceman/boris/" class="externallink">Boris</a></p>
 		</div>
 	</div>
 <?php

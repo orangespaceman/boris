@@ -99,40 +99,7 @@ class RevisionCheck {
 	 * @access private
 	 */
 	function getLiveRevision() {
-
-		// condition : get live version, only if curl is installed
-		if (function_exists('curl_init') && (int)PHP_VERSION > 4) {
-
-			// set url of html page containing latest revision number
-			$liveRevisionUrl = "http://labs.petegoodman.com/boris_localhost_browser/";
-
-			// retrieve xml through curl
-			$ch = curl_init($liveRevisionUrl);
-			curl_setopt($ch, CURLOPT_URL, $liveRevisionUrl);
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-			$xml = curl_exec($ch);
-			curl_close($ch);
-
-			// load in the xml stream
-			$dom = new DomDocument();
-			@$dom->loadXML($xml);
-
-			// get revision number containing element
-			$revisionNumber = $dom->getElementsByTagName("var");
-
-			// condition : if no data found, return an error string
-			if ($revisionNumber->length < 1) {
-				return false;
-			} else {
-
-				// get revision number
-				$latestUpdate = $revisionNumber->item(0);
-				return intval($latestUpdate->textContent);
-			}
-		} else {
-			return false;
-		}
+		return false;
 	}
 }
 ?>

@@ -1,10 +1,8 @@
-/** 
+/**
  * CSS for Boris - Localhost browser
- * 
- * @author Pete Goodman
- * 
+ *
  * SKIN - Dark
- * 
+ *
  * Colours:
  * #000 : main bg
  * #111 : feint bg
@@ -14,28 +12,28 @@
  * #333 : borders
  * #666 : project text
  * #0a0a0a : project hover background
- * 
+ *
  */
 
-/* 
+/*
  * Global selectors and classes
  */
 		/* body */
-		body.dark {	
+		body.dark {
 			background-color : #000;
 			color : #fff;
 		}
 
 
-		/* 
+		/*
 		 * links
 		 */
-				.dark a { 
-					color: #666; 
+				.dark a {
+					color: #666;
 				}
 
-				.dark a:hover { 
-					color: #999; 
+				.dark a:hover {
+					color: #999;
 				}
 
 
@@ -52,7 +50,7 @@
 					        border-right : 1px solid #333;
 				        }
 
-						
+
 /*
  * global ids / areas
  */
@@ -62,29 +60,29 @@
 			 	.dark #header {
 					background-image : url("../img/site_icon.gif");
 				}
-				
-				/* 
+
+				/*
 				 *  header : Breadcrumb navigation -- styling the nested lists
 				 */
 						.dark #header ul#crumb li a {
 							background-image : url('../img/slash.gif');
 						}
-		
+
 		/*
-		 * Options area 
+		 * Options area
 		 */
 		        .dark #options {
                     border-bottom : 2px solid #fff;
 		        }
-				
+
 				/*
 		         * Options area : initial menu
 		         */
          		        .dark #options ul li a {
 		                    background-image : url('../img/bullet_down.gif');
         		        }
-  
-        		        
+
+
         		/*
         		 * Options area : sub menus
         		 */
@@ -92,30 +90,30 @@
         	                border : 1px solid #333;
 							border-top : 0;
         	            }
-						
+
 						.dark #options ul li ul li {
 							background : #000;
 						}
-        	            
+
                         .dark #options ul li ul li a {
                             background-image : url('../img/bullet_right.gif');
                         }
-                        
+
                         .dark #options ul li ul li a strong {
                             background-image : url('../img/option_selected.gif');
                         }
-                        
+
                         /*
                          * Options area : sub menus : option images
                          */
                                 .dark #options ul li ul li#options-view-list a {
                                     background-image : url('../img/options_view_list.gif');
                                 }
-                                
+
                                 .dark #options ul li ul li#options-view-grid a {
                                     background-image : url('../img/options_view_grid.gif');
                                 }
-	            
+
 
 		/*
 		 * content
@@ -124,34 +122,34 @@
 					background : #111;
 				}
 
-				
+
 		/*
-		 * projects : tabs 
+		 * projects : tabs
 		 */
 				.dark #projects ul#projecttabs {
 					border-bottom : 1px solid #fff;
 					background : #000;
 				}
-				
+
 				/* hidden class, switchable in options menu */
 				.dark #projects.full ul#projecttabs {
 			        display : none;
 			    }
-				
+
 				.dark #projects ul#projecttabs li a {
 					border-bottom : 1px solid #fff;
 					color : #fff;
 				}
-				
+
 				.dark #projects ul#projecttabs li a.selected,
 				.dark #projects ul#projecttabs li a:hover {
 					background : #111;
 				}
-				
+
 				.dark #projects ul#projecttabs li a.selected {
 				}
-		
-		
+
+
 		/*
 		 * projects : individual project layout
 		 */
@@ -163,22 +161,22 @@
         					background : #000;
         				}
 
-						/* 
-						 * link element surrounds each project 
-						 */ 
+						/*
+						 * link element surrounds each project
+						 */
 								.dark #projects #projectlist p a,
 								.dark #projects #projectlist p.grid a {
 									border : 1px solid #000;
 									color : #ccc;
 								}
-						
+
 								.dark #projects #projectlist p a:hover,
 								.dark #projects #projectlist p.grid a:hover {
 									color : #fff;
 									border-color : #333;
 									background-color : #0a0a0a;
 								}
-								
+
 								.dark #projects #projectlist p a strong,
 								.dark #projects #projectlist p.grid a strong {
 									border-top : 2px solid #333;
@@ -190,19 +188,19 @@
 								.dark #projects #projectlist p.grid a:hover strong {
 									color : #ccc;
 								}
-						
+
  				/*
 				 * projects : individual project layout : list
 				 */
         				.dark #projects #projectlist.list p {
         					background : #000;
         				}
-						
+
 						.dark #projects #projectlist.list p a strong {
 							border : 0;
 						}
-						
-				
+
+
              	/*
 				 * preview span element
 				 */
@@ -220,25 +218,25 @@
 							color : #fff;
 						}
 
-				/* 
-				 * project link names (directory names) 
+				/*
+				 * project link names (directory names)
 				 */
 						.dark #projects #projectlist p.file a {
 							background-image : url('../img/file.gif');
 						}
-				
+
 						.dark #projects #projectlist p.directory a {
 							background-image : url('../img/folder.gif');
 						}
 
-				
+
 		/*
 		 * Footer
 		 */
 				.dark #footer {
 					border-top : 2px solid #fff;
 				}
-				
+
 				.dark #footer p a.externallink {
 					background : url('../img/external.gif') 100% 0% no-repeat;
 				}
